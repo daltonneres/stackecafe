@@ -233,6 +233,50 @@ body {
     color: var(--text);
 }
 
+/* ─── STATS ROW ───────────────────────────────────────────────────────── */
+.stats-row {
+    margin-top: 22px;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.stat-item {
+    flex: 1;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 14px 8px;
+    text-align: center;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.stat-item:hover {
+    border-color: var(--blue);
+    transform: translateY(-2px);
+}
+
+.stat-num {
+    font-family: var(--mono);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--blue);
+    line-height: 1.2;
+}
+
+.stat-label {
+    margin-top: 4px;
+    font-size: 0.65rem;
+    color: var(--muted);
+    line-height: 1.35;
+}
+
+@media (max-width: 420px) {
+    .stats-row { gap: 8px; }
+    .stat-num { font-size: 1.05rem; }
+    .stat-label { font-size: 0.6rem; }
+}
+
 /* ─── SECTION LABEL ───────────────────────────────────────────────────── */
 .section-label {
     display: flex;
@@ -410,6 +454,51 @@ body {
 .info-card.quote h3 {
     justify-content: center;
     margin-bottom: 12px;
+}
+
+.info-card.featured-project {
+    grid-column: 1 / -1;
+    position: relative;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.14), rgba(37, 99, 235, 0.02));
+    border-color: rgba(37, 99, 235, 0.4);
+    padding-top: 34px;
+}
+
+.project-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.03em;
+    color: var(--muted);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    padding: 4px 9px;
+    border-radius: 999px;
+}
+
+.info-card.featured-project p { color: var(--muted); }
+.info-card.featured-project p strong { color: var(--text); }
+
+.project-cta {
+    margin-top: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    background: var(--blue);
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+    transition: all 0.25s ease;
+}
+
+.project-cta:hover {
+    background: var(--blue-dark);
+    transform: translateY(-2px);
 }
 
 /* ─── FOOTER ──────────────────────────────────────────────────────────── */
